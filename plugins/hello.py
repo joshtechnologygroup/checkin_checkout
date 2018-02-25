@@ -19,9 +19,10 @@ def send__ss_alert(message, name):
 
     flag = True
     flag2 = True
-    retries = 1
+    retries = 0
     while flag:
-        print(name + " - " + str(retries++))
+        retries += 1
+        print(name + " - " + str(retries))
         data = foo(sql)
         print(data)
 
