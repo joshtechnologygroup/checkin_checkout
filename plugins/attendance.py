@@ -20,6 +20,7 @@ def send__ss_alert(message, name):
 
     if not verify_employee_exist(name):
         message.reply('%s does not work here. At least not that I know of. ' % name)
+        return
 
     request_in_progress = True
     in_progress_message_sent = True
@@ -38,7 +39,8 @@ def send__ss_alert(message, name):
                 request_in_progress = False
         else:
             if in_progress_message_sent:
-                message.reply('%s has not yet arrived in office' % name)
+                message.reply('%(name)s has not yet arrived in office. '
+                              'I\'ll let you know when %(name)s arrive ' % {'name': name})
                 in_progress_message_sent = False
         time.sleep(10)
 

@@ -4,6 +4,7 @@ import pyodbc
 
 from retrying import retry
 
+# database settings
 server = '192.168.1.88'
 database = 'SmartOffice'
 username = 'hackathon2'
